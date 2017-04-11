@@ -1,0 +1,10 @@
+bootstrap:
+  architecture: armhf
+  repository: deb http://archive.raspbian.org/raspbian jessie main contrib non-free
+  repository_key: https://archive.raspbian.org/raspbian.public.key
+
+qemu:
+  package: qemu-user-static
+  repository: deb http://ftp.ch.debian.org/debian/ stretch main
+  repository_key: https://ftp-master.debian.org/keys/archive-key-8.asc
+
