@@ -1,0 +1,34 @@
+bootstrap:
+  tool: debootstrap
+
+general:
+  edi_compression: gz
+  edi_required_minimal_edi_version: 0.5.2
+
+lxc_profiles:
+  010_lxc_networking:
+    path: lxc_profiles/general/lxc_networking/default_interface.yml
+
+lxc_templates:
+  010_etc_hostname:
+    path: lxc_templates/debian/hostname/hostname.yml
+  020_etc_hosts:
+    path: lxc_templates/debian/hosts/hosts.yml
+
+playbooks:
+  010_inherit_host_proxy_settings:
+    path: playbooks/debian/inherit_host_proxy_settings/main.yml
+  020_lxc_networking:
+    path: playbooks/debian/lxc_networking/main.yml
+  030_base_system:
+    path: playbooks/debian/base_system/main.yml
+  040_development_user_facilities:
+    path: playbooks/debian/development_user_facilities/main.yml
+  050_sample_playbook:
+    path: playbooks/sample_playbook/main.yml
+
+shared_folders:
+  edi_workspace:
+    folder: edi-workspace
+    mountpoint: edi-workspace
+

@@ -1,0 +1,5 @@
+bootstrap:
+  architecture: amd64
+  repository: deb http://httpredir.debian.org/debian jessie main
+  repository_key: https://ftp-master.debian.org/keys/archive-key-8.asc
+
