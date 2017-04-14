@@ -14,4 +14,7 @@
     - role: development_tools
       become: True
       become_user: root
+    - role: compiler_tweaks
+      become: True
+      become_user: root
 

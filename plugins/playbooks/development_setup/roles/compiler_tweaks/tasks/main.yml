@@ -1,0 +1,5 @@
+---
+
+- name: Adjust gcc 4.9 cross compiler settings for raspbian.
+  copy: src=raspbian_gcc4.9_specs dest=/usr/lib/gcc/arm-linux-gnueabihf/4.9/specs
+  when: enable_cross_development
