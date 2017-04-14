@@ -1,0 +1,20 @@
+---
+- name: Install base development tools.
+  apt: name={{ item }} state=present install_recommends=no
+  with_items: "{{ base_development_tools }}"
+
+- name: Install native development tools.
+  apt: name={{ item }} state=present install_recommends=no
+  with_items: "{{ native_development_tools }}"
+  when: not enable_cross_development
+
+- name: Install cross development tools.
+  apt: name={{ item }} state=present install_recommends=no
+  with_items: "{{ cross_development_tools }}"
+  when: enable_cross_development
+
+- name: Install backported cross development tools.
+  apt: name={{ item }} state=latest install_recommends=no default_release=jessie-backports
+  with_items: "{{backported_cross_development_tools}}"
+  when: enable_cross_development
+

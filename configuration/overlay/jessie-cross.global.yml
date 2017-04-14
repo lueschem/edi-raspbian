@@ -3,3 +3,7 @@ bootstrap:
   repository: deb http://httpredir.debian.org/debian jessie main
   repository_key: https://ftp-master.debian.org/keys/archive-key-8.asc
 
+playbooks:
+  050_development_setup:
+    parameters:
+      enable_cross_development: True
