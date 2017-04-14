@@ -8,6 +8,11 @@
   with_items: "{{ native_development_tools }}"
   when: not enable_cross_development
 
+- name: Remove conflicting dev packages.
+  apt: name={{ item }} state=absent
+  with_items: "{{ conflicting_dev_packages }}"
+  when: enable_cross_development
+
 - name: Install cross development tools.
   apt: name={{ item }} state=present
   with_items: "{{ cross_development_tools }}"
