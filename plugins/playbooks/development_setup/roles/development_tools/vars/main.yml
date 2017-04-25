@@ -1,4 +1,8 @@
 ---
+linux_libc_dev_package_location: http://ftp.ch.debian.org/debian/pool/main/l/linux/
+
+linux_libc_dev_package: linux-libc-dev_3.16.7-ckt25-2_armhf.deb
+
 base_development_tools:
   - apt-utils
   - base-files
@@ -13,13 +17,7 @@ base_development_tools:
   - fakeroot
   - m4
   - vim
-
-native_development_tools:
   - build-essential
-
-conflicting_dev_packages:
-  - linux-libc-dev
-  - libc6-dev
 
 cross_development_tools:
   - crossbuild-essential-armhf

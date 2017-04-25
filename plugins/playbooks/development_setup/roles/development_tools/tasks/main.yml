@@ -1,17 +1,19 @@
 ---
+- name: Install specific version of native linux-libc-dev.
+  apt: name=linux-libc-dev state=present default_release=jessie-updates
+  when: enable_cross_development
+
+- name: Download corresponding armhf version of linux-libc-dev.
+  get_url: url={{ linux_libc_dev_package_location }}/{{ linux_libc_dev_package }} dest=/tmp/{{ linux_libc_dev_package }}
+  when: enable_cross_development
+
+- name: Install the downloaded armhf version of linux-libc-dev.
+  command: bash -c "dpkg -i /tmp/{{ linux_libc_dev_package }} && touch /etc/linux-libc-dev.installed.edi" creates=/etc/linux-libc-dev.installed.edi
+  when: enable_cross_development
+
 - name: Install base development tools.
   apt: name={{ item }} state=present
   with_items: "{{ base_development_tools }}"
-
-- name: Install native development tools.
-  apt: name={{ item }} state=present
-  with_items: "{{ native_development_tools }}"
-  when: not enable_cross_development
-
-- name: Remove conflicting dev packages.
-  apt: name={{ item }} state=absent
-  with_items: "{{ conflicting_dev_packages }}"
-  when: enable_cross_development
 
 - name: Install cross development tools.
   apt: name={{ item }} state=present

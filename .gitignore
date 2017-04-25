@@ -3,3 +3,7 @@
 *bootstrap.tar.*
 *lxc.tar.*
 qemu-*-static
+
+# development IDEs
+.idea/
+
