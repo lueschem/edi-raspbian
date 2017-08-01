@@ -5,5 +5,6 @@ bootstrap:
 
 playbooks:
   050_development_setup:
+    path: playbooks/development_setup_jessie/main.yml
     parameters:
       enable_cross_development: True
