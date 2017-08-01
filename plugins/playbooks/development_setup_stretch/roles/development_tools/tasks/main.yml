@@ -1,0 +1,10 @@
+---
+- name: Install base development tools.
+  apt: name={{ item }} state=present
+  with_items: "{{ base_development_tools }}"
+
+- name: Install cross development tools.
+  apt: name={{ item }} state=present
+  with_items: "{{ cross_development_tools }}"
+  when: enable_cross_development
+

@@ -1,0 +1,5 @@
+---
+
+- name: Adjust gcc 6.3 cross compiler settings for raspbian.
+  copy: src=raspbian_gcc6.3_specs dest=/usr/lib/gcc-cross/arm-linux-gnueabihf/6/specs
+  when: enable_cross_development

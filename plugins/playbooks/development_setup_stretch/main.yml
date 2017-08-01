@@ -1,0 +1,20 @@
+- hosts: edi
+  
+  vars:
+    enable_cross_development: False
+
+  roles:
+    - role: repositories
+      become: True
+      become_user: root
+    - role: multiarch_support
+      become: True
+      become_user: root
+      when: enable_cross_development
+    - role: development_tools
+      become: True
+      become_user: root
+    - role: compiler_tweaks
+      become: True
+      become_user: root
+

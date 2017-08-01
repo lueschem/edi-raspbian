@@ -1,0 +1,18 @@
+---
+- name: Remove /etc/apt/sources.list.
+  file: dest=/etc/apt/sources.list state=absent
+
+- name: Add raspbian apt-key.
+  apt_key: data="{{ lookup('file', 'raspbian.public.key') }}" state=present
+  when: enable_cross_development
+
+- name: Add stretch repository for amd64 binaries.
+  copy: src=stretch.list dest=/etc/apt/sources.list.d/stretch.list
+  when: enable_cross_development
+
+- name: Add raspbian stretch repository for armhf binaries and source packages.
+  copy: src=raspbian_stretch.list dest=/etc/apt/sources.list.d/raspbian_stretch.list
+
+- name: Update apt cache.
+  apt: update_cache=yes
+
