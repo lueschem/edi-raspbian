@@ -1,7 +1,5 @@
 ---
-linux_libc_dev_package_location: http://deb.debian.org/debian/pool/main/l/linux/
-
-linux_libc_dev_package: linux-libc-dev_3.16.7-ckt25-2_armhf.deb
+linux_libc_dev_sources: /etc/apt/sources.list.d/jessie_armhf.list
 
 base_development_tools:
   - apt-utils

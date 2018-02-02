@@ -1,14 +1,25 @@
 ---
-- name: Install specific version of native linux-libc-dev.
-  apt: name=linux-libc-dev state=present default_release=jessie-updates
+- name: Add Debian armhf repository for corresponding linux-libc-dev:armhf.
+  copy: src=jessie_armhf.list dest={{ linux_libc_dev_sources }}
   when: enable_cross_development
 
-- name: Download corresponding armhf version of linux-libc-dev.
-  get_url: url={{ linux_libc_dev_package_location }}/{{ linux_libc_dev_package }} dest=/tmp/{{ linux_libc_dev_package }}
+- name: Update apt cache.
+  apt: update_cache=yes
   when: enable_cross_development
 
-- name: Install the downloaded armhf version of linux-libc-dev.
-  command: bash -c "dpkg -i /tmp/{{ linux_libc_dev_package }} && touch /etc/linux-libc-dev.installed.edi" creates=/etc/linux-libc-dev.installed.edi
+- name: Install corresponding versions of linux-libc-dev.
+  apt: name={{ item }} state=present default_release=jessie-updates
+  with_items:
+    - linux-libc-dev
+    - linux-libc-dev:armhf
+  when: enable_cross_development
+
+- name: Remove Debian armhf repository.
+  file: dest={{ linux_libc_dev_sources }} state=absent
+  when: enable_cross_development
+
+- name: Update apt cache.
+  apt: update_cache=yes
   when: enable_cross_development
 
 - name: Install base development tools.
