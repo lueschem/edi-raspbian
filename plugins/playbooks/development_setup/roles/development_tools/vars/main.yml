@@ -1,5 +1,5 @@
 ---
-linux_libc_dev_package_location: http://ftp.ch.debian.org/debian/pool/main/l/linux/
+linux_libc_dev_package_location: http://deb.debian.org/debian/pool/main/l/linux/
 
 linux_libc_dev_package: linux-libc-dev_3.16.7-ckt25-2_armhf.deb
 

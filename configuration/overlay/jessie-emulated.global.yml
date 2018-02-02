@@ -5,6 +5,6 @@ bootstrap:
 
 qemu:
   package: qemu-user-static
-  repository: deb http://ftp.ch.debian.org/debian/ stretch main
+  repository: deb http://deb.debian.org/debian/ stretch main
   repository_key: https://ftp-master.debian.org/keys/archive-key-8.asc
 
