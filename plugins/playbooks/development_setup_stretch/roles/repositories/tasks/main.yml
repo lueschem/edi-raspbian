@@ -7,11 +7,19 @@
   when: enable_cross_development
 
 - name: Add stretch repository for amd64 binaries.
-  copy: src=stretch.list dest=/etc/apt/sources.list.d/stretch.list
+  copy: src=stretch.list dest=/etc/apt/sources.list.d
   when: enable_cross_development
 
-- name: Add raspbian stretch repository for armhf binaries and source packages.
-  copy: src=raspbian_stretch.list dest=/etc/apt/sources.list.d/raspbian_stretch.list
+- name: Add stretch repository for sources.
+  copy: src=stretch_src.list dest=/etc/apt/sources.list.d
+  when: enable_cross_development
+
+- name: Add raspbian stretch repository for armhf binaries.
+  copy: src=raspbian_stretch.list dest=/etc/apt/sources.list.d
+
+- name: Add raspbian stretch repository for sources.
+  copy: src=raspbian_stretch_src.list dest=/etc/apt/sources.list.d
+  when: not enable_cross_development
 
 - name: Update apt cache.
   apt: update_cache=yes
