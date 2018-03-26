@@ -1,5 +1,5 @@
-deb [arch=amd64] http://deb.debian.org/debian jessie main contrib non-free
-deb [arch=amd64] http://deb.debian.org/debian jessie-updates main contrib non-free
-deb [arch=amd64] http://deb.debian.org/debian jessie-backports main contrib non-free
+deb [arch=amd64] http://httpredir.debian.org/debian jessie main contrib non-free
+deb [arch=amd64] http://httpredir.debian.org/debian jessie-updates main contrib non-free
+deb [arch=amd64] http://httpredir.debian.org/debian jessie-backports main contrib non-free
 deb [arch=amd64] http://security.debian.org/ jessie/updates main contrib non-free
 
