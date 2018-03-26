@@ -22,6 +22,8 @@ lxc_templates:
 playbooks:
   010_base_system:
     path: playbooks/debian/base_system/main.yml
+    parameters:
+      install_openssh_server: True
   040_development_user_facilities:
     path: playbooks/debian/development_user_facilities/main.yml
 
