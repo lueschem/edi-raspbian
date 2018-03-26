@@ -3,7 +3,7 @@ bootstrap:
 
 general:
   edi_compression: gz
-  edi_required_minimal_edi_version: 0.5.2
+  edi_required_minimal_edi_version: 0.11.3
 
 lxc_profiles:
   010_lxc_networking:
@@ -20,16 +20,12 @@ lxc_templates:
     path: lxc_templates/debian/hosts/hosts.yml
 
 playbooks:
-  010_inherit_host_proxy_settings:
-    path: playbooks/debian/inherit_host_proxy_settings/main.yml
-  020_lxc_networking:
-    path: playbooks/debian/lxc_networking/main.yml
-  030_base_system:
+  010_base_system:
     path: playbooks/debian/base_system/main.yml
+    parameters:
+      install_openssh_server: True
   040_development_user_facilities:
     path: playbooks/debian/development_user_facilities/main.yml
-  050_development_setup:
-    path: playbooks/development_setup/main.yml
 
 shared_folders:
   edi_workspace:

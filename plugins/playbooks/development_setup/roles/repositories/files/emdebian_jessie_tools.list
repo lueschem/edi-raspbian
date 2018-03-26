@@ -1,3 +1,0 @@
-# Cross compilers (not in standard repository for Debian jessie)
-deb http://emdebian.org/tools/debian jessie main extra
-deb-src http://emdebian.org/tools/debian jessie main extra

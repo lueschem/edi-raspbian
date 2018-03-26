@@ -1,0 +1,8 @@
+---
+
+- name: Pretend to be Raspbian.
+  copy: src={{ item }} dest=/etc
+  with_items:
+    - os-release
+    - lsb-release
+  when: enable_cross_development

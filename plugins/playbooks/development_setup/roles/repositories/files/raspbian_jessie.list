@@ -1,2 +1,0 @@
-deb [arch=armhf] http://archive.raspbian.org/raspbian jessie main contrib non-free
-deb-src [arch=armhf] http://archive.raspbian.org/raspbian jessie main contrib non-free
