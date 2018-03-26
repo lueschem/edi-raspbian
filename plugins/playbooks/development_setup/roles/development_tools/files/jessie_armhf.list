@@ -1,4 +1,4 @@
 deb [arch=armhf] http://deb.debian.org/debian jessie main contrib non-free
 deb [arch=armhf] http://deb.debian.org/debian jessie-updates main contrib non-free
 deb [arch=armhf] http://deb.debian.org/debian jessie-backports main contrib non-free
-# deb [arch=armhf] http://security.debian.org/ jessie/updates main contrib non-free
+deb [arch=armhf] http://security.debian.org/ jessie/updates main contrib non-free
