@@ -1,1 +1,1 @@
-deb-src [arch=armhf] http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi
+deb-src http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi

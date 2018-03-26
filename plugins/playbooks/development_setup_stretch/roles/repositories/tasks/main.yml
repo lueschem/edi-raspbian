@@ -24,3 +24,27 @@
 - name: Update apt cache.
   apt: update_cache=yes
 
+- name: Enable https package repositories.
+  apt:
+    name: apt-transport-https 
+    state: present
+  when: enable_cross_development
+
+- name: Add key for cross compiler repository.
+  apt_key:
+    data: "{{ lookup('file', 'stretch_raspbian_cross.key') }}"
+    state: present
+  when: enable_cross_development
+
+- name: Increase priority of cross compiler repository.
+  copy:
+    src: stretch-raspbian-cross
+    dest: /etc/apt/preferences.d
+  when: enable_cross_development
+
+- name: Add sources list of cross compiler repository.
+  copy:
+    src: stretch_raspbian_cross.list
+    dest: /etc/apt/sources.list.d
+  when: enable_cross_development
+

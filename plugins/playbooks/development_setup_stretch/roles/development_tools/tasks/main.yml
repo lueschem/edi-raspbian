@@ -31,3 +31,7 @@
   with_items: "{{ cross_development_tools }}"
   when: enable_cross_development
 
+- name: Install multiarch libraries.
+  apt: name={{ item }}:armhf state=present
+  with_items: "{{ multiarch_libraries }}"
+  when: enable_cross_development

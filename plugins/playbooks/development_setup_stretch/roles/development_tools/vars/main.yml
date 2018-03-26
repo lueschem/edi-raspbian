@@ -22,3 +22,7 @@ cross_development_tools:
   - dpkg-cross
   - qemu-user-static
 
+multiarch_libraries:
+  - libc6
+  - libstdc++6
+
