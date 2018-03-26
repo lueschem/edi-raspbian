@@ -48,3 +48,6 @@
     dest: /etc/apt/sources.list.d
   when: enable_cross_development
 
+- name: Update apt cache.
+  apt: update_cache=yes
+
