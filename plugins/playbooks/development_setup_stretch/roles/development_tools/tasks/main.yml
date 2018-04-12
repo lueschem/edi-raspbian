@@ -1,27 +1,4 @@
 ---
-- name: Add Debian armhf repository for corresponding linux-libc-dev:armhf.
-  copy: src=stretch_armhf.list dest={{ linux_libc_dev_sources }}
-  when: enable_cross_development
-
-- name: Update apt cache.
-  apt: update_cache=yes
-  when: enable_cross_development
-
-- name: Install corresponding versions of linux-libc-dev.
-  apt: name={{ item }} state=present
-  with_items:
-    - linux-libc-dev
-    - linux-libc-dev:armhf
-  when: enable_cross_development
-
-- name: Remove Debian armhf repository.
-  file: dest={{ linux_libc_dev_sources }} state=absent
-  when: enable_cross_development
-
-- name: Update apt cache.
-  apt: update_cache=yes
-  when: enable_cross_development
-
 - name: Install base development tools.
   apt: name={{ item }} state=present
   with_items: "{{ base_development_tools }}"
