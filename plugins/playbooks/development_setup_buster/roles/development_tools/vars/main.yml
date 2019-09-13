@@ -1,5 +1,5 @@
 ---
-linux_libc_dev_sources: /etc/apt/sources.list.d/stretch_armhf.list
+linux_libc_dev_sources: /etc/apt/sources.list.d/buster_armhf.list
 
 base_development_tools:
   - apt-utils

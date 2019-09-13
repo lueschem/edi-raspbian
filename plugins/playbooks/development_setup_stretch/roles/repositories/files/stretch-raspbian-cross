@@ -1,3 +1,0 @@
-Package: *
-Pin: release n=stretch-raspbian-cross
-Pin-Priority: 1050

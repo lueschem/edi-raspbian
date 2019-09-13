@@ -1,0 +1,5 @@
+deb [arch=amd64] http://deb.debian.org/debian buster main contrib non-free
+deb [arch=amd64] http://deb.debian.org/debian buster-updates main contrib non-free
+deb [arch=amd64] http://deb.debian.org/debian buster-backports main contrib non-free
+deb [arch=amd64] http://security.debian.org/ buster/updates main contrib non-free
+

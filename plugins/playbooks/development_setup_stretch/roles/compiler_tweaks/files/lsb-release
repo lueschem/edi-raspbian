@@ -1,4 +1,0 @@
-DISTRIB_ID=Raspbian
-DISTRIB_DESCRIPTION="Raspbian GNU/Linux 9.3 (stretch)"
-DISTRIB_RELEASE=9.3
-DISTRIB_CODENAME=stretch

@@ -1,0 +1,10 @@
+bootstrap:
+  architecture: amd64
+  repository: deb http://deb.debian.org/debian buster main
+  repository_key: https://ftp-master.debian.org/keys/archive-key-9.asc
+
+playbooks:
+  050_development_setup:
+    path: playbooks/development_setup_buster/main.yml
+    parameters:
+      enable_cross_development: True

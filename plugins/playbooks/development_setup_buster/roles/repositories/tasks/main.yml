@@ -6,45 +6,39 @@
   apt_key: data="{{ lookup('file', 'raspbian.public.key') }}" state=present
   when: enable_cross_development
 
-- name: Add stretch repository for amd64 binaries.
-  copy: src=stretch.list dest=/etc/apt/sources.list.d
+- name: Add buster repository for amd64 binaries.
+  copy: src=buster.list dest=/etc/apt/sources.list.d
   when: enable_cross_development
 
-- name: Add stretch repository for sources.
-  copy: src=stretch_src.list dest=/etc/apt/sources.list.d
+- name: Add buster repository for sources.
+  copy: src=buster_src.list dest=/etc/apt/sources.list.d
   when: enable_cross_development
 
-- name: Add raspbian stretch repository for armhf binaries.
-  copy: src=raspbian_stretch.list dest=/etc/apt/sources.list.d
+- name: Add raspbian buster repository for armhf binaries.
+  copy: src=raspbian_buster.list dest=/etc/apt/sources.list.d
 
-- name: Add raspbian stretch repository for sources.
-  copy: src=raspbian_stretch_src.list dest=/etc/apt/sources.list.d
+- name: Add raspbian buster repository for sources.
+  copy: src=raspbian_buster_src.list dest=/etc/apt/sources.list.d
   when: not enable_cross_development
 
 - name: Update apt cache.
   apt: update_cache=yes
 
-- name: Enable https package repositories.
-  apt:
-    name: apt-transport-https 
-    state: present
-  when: enable_cross_development
-
 - name: Add key for cross compiler repository.
   apt_key:
-    data: "{{ lookup('file', 'stretch_raspbian_cross.key') }}"
+    data: "{{ lookup('file', 'raspbian_cross_repo.key') }}"
     state: present
   when: enable_cross_development
 
 - name: Increase priority of cross compiler repository.
   copy:
-    src: stretch-raspbian-cross
+    src: raspbian-cross-repo
     dest: /etc/apt/preferences.d
   when: enable_cross_development
 
 - name: Add sources list of cross compiler repository.
   copy:
-    src: stretch_raspbian_cross.list
+    src: raspbian_cross_repo.list
     dest: /etc/apt/sources.list.d
   when: enable_cross_development
 

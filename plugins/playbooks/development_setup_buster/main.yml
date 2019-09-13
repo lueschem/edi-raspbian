@@ -1,4 +1,4 @@
-- hosts: edi
+- hosts: all
   
   vars:
     enable_cross_development: False

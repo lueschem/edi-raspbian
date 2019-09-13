@@ -1,0 +1,9 @@
+bootstrap:
+  architecture: armhf
+  repository: deb http://mirrordirector.raspbian.org/raspbian/ buster main contrib non-free rpi
+  repository_key: https://archive.raspbian.org/raspbian.public.key
+
+playbooks:
+  050_development_setup:
+    path: playbooks/development_setup_buster/main.yml
+
