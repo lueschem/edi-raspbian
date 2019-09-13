@@ -7,3 +7,5 @@ qemu-*-static
 # development IDEs
 .idea/
 
+artifacts/
+
