@@ -4,14 +4,14 @@
     name: "{{ base_development_tools }}" 
     state: present
 
-#- name: Install cross development tools.
-#  apt:
-#    name: "{{ cross_development_tools }}"
-#    state: present
-#  when: enable_cross_development
+- name: Install cross development tools.
+  apt:
+    name: "{{ cross_development_tools }}"
+    state: present
+  when: enable_cross_development
 
-#- name: Install multiarch libraries.
-#  apt:
-#    name: "{{ multiarch_libraries }}:armhf"
-#    state: present
-#  when: enable_cross_development
+- name: Install multiarch libraries.
+  apt:
+    name: "{{ multiarch_libraries }}:armhf"
+    state: present
+  when: enable_cross_development

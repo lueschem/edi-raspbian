@@ -14,8 +14,8 @@
   copy: src=buster_src.list dest=/etc/apt/sources.list.d
   when: enable_cross_development
 
-#- name: Add raspbian buster repository for armhf binaries.
-#  copy: src=raspbian_buster.list dest=/etc/apt/sources.list.d
+- name: Add raspbian buster repository for armhf binaries.
+  copy: src=raspbian_buster.list dest=/etc/apt/sources.list.d
 
 - name: Add raspbian buster repository for sources.
   copy: src=raspbian_buster_src.list dest=/etc/apt/sources.list.d
@@ -41,11 +41,11 @@
     dest: /etc/apt/preferences.d
   when: enable_cross_development
 
-#- name: Add sources list of cross compiler repository.
-#  copy:
-#    src: raspbian_cross_repo.list
-#    dest: /etc/apt/sources.list.d
-#  when: enable_cross_development
+- name: Add sources list of cross compiler repository.
+  copy:
+    src: raspbian_cross_repo.list
+    dest: /etc/apt/sources.list.d
+  when: enable_cross_development
 
 - name: Update apt cache.
   apt: update_cache=yes

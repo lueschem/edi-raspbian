@@ -1,6 +1,9 @@
 ---
 - name: Enable armhf architecture.
-  command: bash -c "dpkg --add-architecture armhf && touch /etc/armhf.enabled.edi" creates=/etc/armhf.enabled.edi
+  command: bash -c "dpkg --add-architecture armhf && touch /etc/armhf.enabled.edi"
+  args:
+    creates: /etc/armhf.enabled.edi
 
 - name: Update apt cache.
-  apt: update_cache=yes
+  apt:
+    update_cache: yes
