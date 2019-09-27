@@ -8,10 +8,10 @@
   apt:
     name: "{{ cross_development_tools }}"
     state: present
-  when: enable_cross_development
+  when: enable_cross_development and not gcc_bootstrap_environment
 
 - name: Install multiarch libraries.
   apt:
     name: "{{ multiarch_libraries }}"
     state: present
-  when: enable_cross_development
+  when: enable_cross_development and not gcc_bootstrap_environment

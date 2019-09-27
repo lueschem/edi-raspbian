@@ -2,6 +2,7 @@
   
   vars:
     enable_cross_development: False
+    gcc_bootstrap_environment: False
 
   roles:
     - role: repositories

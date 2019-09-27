@@ -22,6 +22,7 @@
 
 - name: Add raspbian buster repository for armhf binaries.
   copy: src=raspbian_buster.list dest=/etc/apt/sources.list.d
+  when: not gcc_bootstrap_environment
 
 - name: Add raspbian buster repository for sources.
   copy: src=raspbian_buster_src.list dest=/etc/apt/sources.list.d
@@ -51,7 +52,7 @@
   copy:
     src: raspbian_cross_repo.list
     dest: /etc/apt/sources.list.d
-  when: enable_cross_development
+  when: enable_cross_development and not gcc_bootstrap_environment
 
 - name: Update apt cache.
   apt: update_cache=yes
