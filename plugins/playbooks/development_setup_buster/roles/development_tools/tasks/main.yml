@@ -12,6 +12,6 @@
 
 - name: Install multiarch libraries.
   apt:
-    name: "{{ multiarch_libraries }}:armhf"
+    name: "{{ multiarch_libraries }}"
     state: present
   when: enable_cross_development

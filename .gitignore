@@ -8,4 +8,4 @@ qemu-*-static
 .idea/
 
 artifacts/
-
+*.retry

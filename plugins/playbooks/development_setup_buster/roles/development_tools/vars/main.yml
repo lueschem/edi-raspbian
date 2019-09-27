@@ -23,6 +23,6 @@ cross_development_tools:
   - qemu-user-static
 
 multiarch_libraries:
-  - libc6
-  - libstdc++6
+  - libc6:armhf
+  - libstdc++6:armhf
 
