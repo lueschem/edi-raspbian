@@ -14,6 +14,12 @@
   copy: src=buster_src.list dest=/etc/apt/sources.list.d
   when: enable_cross_development
 
+- name: Decrease priority of raspbian repository.
+  copy:
+    src: raspbian-buster
+    dest: /etc/apt/preferences.d
+  when: enable_cross_development
+
 - name: Add raspbian buster repository for armhf binaries.
   copy: src=raspbian_buster.list dest=/etc/apt/sources.list.d
 

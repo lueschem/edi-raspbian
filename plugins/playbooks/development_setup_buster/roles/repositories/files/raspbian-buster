@@ -1,0 +1,3 @@
+Package: *
+Pin: origin mirrordirector.raspbian.org
+Pin-Priority: 400
