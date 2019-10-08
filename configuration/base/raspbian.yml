@@ -2,7 +2,7 @@ general:
   edi_compression: gz
   edi_required_minimal_edi_version: 1.1.0
   parameters:
-    gcc_bootstrap_environment: True
+    gcc_bootstrap_environment: False
 
 lxc_profiles:
   010_lxc_networking:
