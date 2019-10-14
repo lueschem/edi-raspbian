@@ -4,6 +4,9 @@ general:
   parameters:
     gcc_bootstrap_environment: False
 
+bootstrap:
+  additional_packages: ["python", "sudo", "netbase", "net-tools", "iputils-ping", "ifupdown", "isc-dhcp-client", "resolvconf", "systemd", "systemd-sysv", "gnupg", "dumb-init"]
+
 lxc_profiles:
   010_lxc_networking:
     path: lxc_profiles/general/lxc_networking/default_interface.yml
@@ -11,6 +14,9 @@ lxc_profiles:
   020_default_root_device:
     path: lxc_profiles/general/default_root_device/default_root_device.yml
 {% endif %}
+  030_suppress_init:
+    path: lxc_profiles/general/suppress_init/suppress_init.yml
+    skip: False
 
 lxc_templates:
   010_etc_hostname:

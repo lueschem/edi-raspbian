@@ -3,6 +3,10 @@ bootstrap:
   repository: deb http://deb.debian.org/debian buster main
   repository_key: https://ftp-master.debian.org/keys/archive-key-9.asc
 
+lxc_profiles:
+  030_suppress_init:
+    skip: True
+
 playbooks:
   050_development_setup:
     path: playbooks/development_setup_buster/main.yml
