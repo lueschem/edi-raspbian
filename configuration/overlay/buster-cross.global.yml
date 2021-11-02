@@ -1,7 +1,7 @@
 bootstrap:
   architecture: amd64
   repository: deb http://deb.debian.org/debian buster main
-  repository_key: https://ftp-master.debian.org/keys/archive-key-9.asc
+  repository_key: https://ftp-master.debian.org/keys/archive-key-10.asc
 
 lxc_profiles:
   030_suppress_init:
