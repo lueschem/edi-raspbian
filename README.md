@@ -1,5 +1,11 @@
 # edi-raspbian
 
+> [!NOTE]
+> The edi-raspbian approach is deprecated. The recommended alternative is to use arm64 on
+> the Raspberry Pi. The arm64 architecture is perfectly compatible with Debian, so a
+> container generated with [edi-pi](https://github.com/lueschem/edi-pi) can be used for
+> cross-compilation.
+
 edi configuration for Raspbian cross compilation and emulated Raspbian.
 
 To generate a Debian buster/Raspbian multiarch cross compilation container use the following command:
